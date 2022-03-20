@@ -51,7 +51,11 @@ Status string_concat(MY_STRING hResult, MY_STRING hAppend);
 // pops off the last char
 Status string_pop_back(MY_STRING hMy_string);
 
+<<<<<<< HEAD
 // compares strings
+=======
+// compairs strings
+>>>>>>> main
 int my_string_compare(MY_STRING hLeft_string, MY_STRING hRight_string);
 
 #endif // (my_string_h) //  leaks -atExit -- ./string
