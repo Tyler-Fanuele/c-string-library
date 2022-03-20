@@ -54,4 +54,7 @@ Status string_pop_back(MY_STRING hMy_string);
 // compares strings
 int string_compare(MY_STRING hLeft_string, MY_STRING hRight_string);
 
+// finds string in string 
+int string_find(MY_STRING hLString, MY_STRING hRString);
+
 #endif // (my_string_h) //  leaks -atExit -- ./string

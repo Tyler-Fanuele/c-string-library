@@ -295,3 +295,25 @@ int string_compare(MY_STRING hLeft_string, MY_STRING hRight_string)
         return 1;
     }
 }
+
+int string_find(MY_STRING hLString, MY_STRING hRString) {
+    My_string *pLString = (My_string*)hLString;
+    My_string *pRString = (My_string*)hRString;
+
+    int lSize = string_get_size(pLString);
+    int rSize = string_get_size(pRString);
+
+    for (int i = 0; i <= rSize - lSize; i++) {
+        int j;
+        for (j = 0; j < lSize; j++) {
+            if ( (string_c_str(pRString)[i + j] ) != (string_c_str(pLString)[j]) ) {
+                break;
+            }
+            if (j == lSize) {
+                return i;
+            }
+        }
+    }
+
+    return -1;
+}

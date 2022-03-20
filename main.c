@@ -13,6 +13,10 @@ int main(int argc, char** argv) {
 
     printf("%s\n%s\n%s\n", string_c_str(string), string_c_str(string2), string_c_str(test));
 
+    if (string_find(string, string2)) {
+        printf("is in\n");
+    }
+
     // Bookend testing
     string_destroy(&string);
     string_destroy(&string2);
