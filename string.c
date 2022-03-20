@@ -254,7 +254,7 @@ Status string_pop_back(MY_STRING hMy_string)
     return SUCCESS;
 }
 
-int my_string_compare(MY_STRING hLeft_string, MY_STRING hRight_string)
+int string_compare(MY_STRING hLeft_string, MY_STRING hRight_string)
 {
     int length_of_string_1 = string_get_size(hLeft_string);
     int length_of_string_2 = string_get_size(hRight_string);
