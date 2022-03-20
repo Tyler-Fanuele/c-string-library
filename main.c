@@ -17,6 +17,8 @@ int main(int argc, char** argv) {
         printf("is in\n");
     }
 
+    string_insertion(string, stdout);
+
     // Bookend testing
     string_destroy(&string);
     string_destroy(&string2);

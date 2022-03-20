@@ -57,4 +57,10 @@ int string_compare(MY_STRING hLeft_string, MY_STRING hRight_string);
 // finds string in string 
 int string_find(MY_STRING hLString, MY_STRING hRString);
 
+// basically an extraction operator for the string 
+Status string_extraction(MY_STRING hMy_string, FILE *fp);
+
+// basically an insertion operator for the string
+Status string_insertion(MY_STRING hMy_string, FILE *fp);
+
 #endif // (my_string_h) //  leaks -atExit -- ./string

@@ -1,0 +1,7 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/tyler/Git/c-string-library'
+gcc -Wall -Werror -pedantic -c main.c
+gcc -Wall -Werror -pedantic -c string.c
+gcc -Wall -Werror -pedantic -o string main.o string.o
+make: Leaving directory `/Users/tyler/Git/c-string-library'
+ 

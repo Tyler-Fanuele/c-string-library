@@ -296,24 +296,93 @@ int string_compare(MY_STRING hLeft_string, MY_STRING hRight_string)
     }
 }
 
-int string_find(MY_STRING hLString, MY_STRING hRString) {
-    My_string *pLString = (My_string*)hLString;
-    My_string *pRString = (My_string*)hRString;
+int string_find(MY_STRING hLString, MY_STRING hRString)
+{
+    My_string *pLString = (My_string *)hLString;
+    My_string *pRString = (My_string *)hRString;
 
     int lSize = string_get_size(pLString);
     int rSize = string_get_size(pRString);
 
-    for (int i = 0; i <= rSize - lSize; i++) {
+    for (int i = 0; i <= rSize - lSize; i++)
+    {
         int j;
-        for (j = 0; j < lSize; j++) {
-            if ( (string_c_str(pRString)[i + j] ) != (string_c_str(pLString)[j]) ) {
+        for (j = 0; j < lSize; j++)
+        {
+            if ((string_c_str(pRString)[i + j]) != (string_c_str(pLString)[j]))
+            {
                 break;
             }
-            if (j == lSize) {
+            if (j == lSize)
+            {
                 return i;
             }
         }
     }
 
     return -1;
+}
+
+Status string_extraction(MY_STRING hMy_string, FILE *fp)
+{
+    int noc;
+    int count = 0;
+    char c;
+    char *tempArray;
+    int i;
+    struct my_string *pstring = (struct my_string *)hMy_string;
+
+    noc = fscanf(fp, " %c", &c);
+
+    if (noc == 1 && noc != EOF)
+    {
+        while (c != ' ' && c != EOF && c != '\n')
+        {
+            pstring->string[count] = c;
+
+            pstring->size = count + 1;
+
+            count++;
+
+            if (pstring->capacity <= pstring->size)
+            {
+                tempArray = (char *)malloc(sizeof(char) * 2 * pstring->capacity);
+                if (tempArray == NULL)
+                {
+                    free(tempArray);
+                    exit(1);
+                }
+                for (i = 0; i < pstring->capacity; i++)
+                {
+                    tempArray[i] = pstring->string[i];
+                }
+                free(pstring->string);
+                pstring->string = NULL;
+
+                pstring->string = tempArray;
+                tempArray = NULL;
+                pstring->capacity *= 2;
+            }
+            c = fgetc(fp);
+        }
+        ungetc(c, fp);
+        return SUCCESS;
+    }
+    return FAILURE;
+}
+
+Status string_insertion(MY_STRING hMy_string, FILE *fp)
+{
+    struct my_string *pstring = (struct my_string *)hMy_string;
+
+    int i;
+    if (pstring->size == 0)
+    {
+        return FAILURE;
+    }
+    for (i = 0; i < pstring->size; i++)
+    {
+        fprintf(fp, "%c", pstring->string[i]);
+    }
+    return SUCCESS;
 }

@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Sun Mar 20 14:52:36 2022
+# Make data base, printed on Sun Mar 20 17:39:43 2022
 
 # Variables
 
@@ -40,7 +41,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/9q/9df_l3717dj1kfp4_xps64_00000gn/T/vscode-ipc-2c1f190b-d7e0-492e-9b48-2f4f1d10333a.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/9q/9df_l3717dj1kfp4_xps64_00000gn/T/vscode-ipc-7a4c6f5e-7309-453e-a87d-95f2c2ae7e4c.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -112,7 +113,6 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
- 
 XPC_SERVICE_NAME = application.com.microsoft.VSCode.5535233.5535239
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
@@ -300,6 +300,6 @@ main.o: main.c string.h bool.h status.h
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Mar 20 14:52:36 2022
+# Finished Make data base on Sun Mar 20 17:39:43 2022
 
  
